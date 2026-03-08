@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Umi - Happy Women's Day</title>
+    <title>For Umi - Happy Women's Day 💝</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Dancing+Script:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Dancing+Script:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,12 +16,14 @@
         body {
             font-family: 'Cormorant Garamond', serif;
             overflow-x: hidden;
-            background: #1a1a2e;
+            background: #0f0c29;
             color: white;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><text y="20" font-size="20">💖</text></svg>'), auto;
         }
         
         .font-display { font-family: 'Playfair Display', serif; }
         .font-handwriting { font-family: 'Dancing Script', cursive; }
+        .font-fun { font-family: 'Poppins', sans-serif; }
         
         /* Animated Gradient Background */
         .gradient-bg {
@@ -30,9 +32,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #f093fb, #f5576c);
+            background: linear-gradient(-45deg, #ff006e, #8338ec, #3a86ff, #06ffa5, #ffbe0b, #fb5607);
             background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
+            animation: gradient 10s ease infinite;
             z-index: -2;
         }
         
@@ -42,21 +44,19 @@
             100% { background-position: 0% 50%; }
         }
         
-        /* Floating Hearts */
-        .heart {
+        /* Floating Elements */
+        .floater {
             position: fixed;
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.6);
-            animation: float 6s ease-in infinite;
             pointer-events: none;
             z-index: -1;
+            animation: float-up 8s ease-in infinite;
         }
         
-        @keyframes float {
-            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+        @keyframes float-up {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
             10% { opacity: 1; }
             90% { opacity: 1; }
-            100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
         }
         
         /* Glassmorphism */
@@ -69,55 +69,80 @@
         }
         
         /* Animations */
-        .fade-in {
-            animation: fadeIn 1s ease-out forwards;
+        .bounce-in { animation: bounceIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards; }
+        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; }
+        .wiggle:hover { animation: wiggle 0.5s ease-in-out infinite; }
+        .pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
+        .float { animation: float 3s ease-in-out infinite; }
+        
+        @keyframes bounceIn {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
         }
         
-        .slide-up {
-            animation: slideUp 1s ease-out forwards;
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
         }
         
-        @keyframes slideUp {
-            from { 
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 105, 180, 0.6); }
         }
         
-        .delay-1 { animation-delay: 0.2s; opacity: 0; }
-        .delay-2 { animation-delay: 0.4s; opacity: 0; }
-        .delay-3 { animation-delay: 0.6s; opacity: 0; }
-        .delay-4 { animation-delay: 0.8s; opacity: 0; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        .delay-5 { animation-delay: 1s; }
         
         /* Interactive Elements */
         .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
         
         .hover-lift:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
         }
         
         /* Magic Button */
         .magic-btn {
-            background: linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3, #54a0ff);
+            background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff, #06ffa5);
             background-size: 300% 300%;
             animation: gradient-shift 3s ease infinite;
-            transition: transform 0.3s;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .magic-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+        
+        .magic-btn:hover::before {
+            left: 100%;
         }
         
         .magic-btn:hover {
-            transform: translateY(-3px) scale(1.05);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
         
         @keyframes gradient-shift {
@@ -129,9 +154,9 @@
         /* Confetti */
         .confetti {
             position: fixed;
-            width: 10px;
-            height: 10px;
-            top: -10px;
+            width: 12px;
+            height: 12px;
+            top: -12px;
             pointer-events: none;
             z-index: 9999;
             animation: confetti-fall linear forwards;
@@ -139,39 +164,167 @@
         
         @keyframes confetti-fall {
             to {
-                transform: translateY(100vh) rotate(720deg);
+                transform: translateY(100vh) rotate(1080deg);
                 opacity: 0;
             }
         }
         
-        /* Flower Animation */
-        .petal {
-            transform-origin: center bottom;
-            transition: transform 0.6s ease;
+        /* Popups */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            z-index: 1000;
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-width: 90%;
+            width: 500px;
         }
         
-        .flower-container:hover .petal {
-            animation: bloom 2s ease-in-out infinite;
+        .popup.active {
+            transform: translate(-50%, -50%) scale(1);
         }
         
-        @keyframes bloom {
-            0%, 100% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(5deg) scale(1.1); }
+        .popup-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            backdrop-filter: blur(5px);
         }
         
-        /* Sparkle */
-        .sparkle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: white;
+        .popup-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        /* Mini Game */
+        .game-btn {
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            animation: sparkle 1.5s linear infinite;
+            font-size: 2rem;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: 3px solid white;
         }
         
-        @keyframes sparkle {
-            0%, 100% { opacity: 0; transform: scale(0); }
-            50% { opacity: 1; transform: scale(1); }
+        .game-btn:hover {
+            transform: scale(1.2) rotate(10deg);
+        }
+        
+        .game-btn:active {
+            transform: scale(0.9);
+        }
+        
+        /* Secret Message */
+        .secret-reveal {
+            background: linear-gradient(45deg, transparent, transparent);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            cursor: pointer;
+            transition: all 0.5s;
+            border-bottom: 2px dashed rgba(255,255,255,0.3);
+        }
+        
+        .secret-reveal:hover {
+            color: #ff006e;
+            text-shadow: 0 0 20px rgba(255,0,110,0.5);
+            border-bottom: 2px solid #ff006e;
+        }
+        
+        /* Love Meter */
+        .love-meter {
+            width: 100%;
+            height: 30px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .love-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #ff006e, #ffbe0b);
+            border-radius: 15px;
+            transition: width 2s ease-out;
+            position: relative;
+        }
+        
+        .love-fill::after {
+            content: '💖';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            animation: bounce 0.5s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(-50%) scale(1); }
+            50% { transform: translateY(-50%) scale(1.3); }
+        }
+        
+        /* Scratch Card */
+        .scratch-container {
+            position: relative;
+            width: 300px;
+            height: 150px;
+            margin: 0 auto;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><text y="20" font-size="20">✨</text></svg>'), auto;
+        }
+        
+        .scratch-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 2;
+        }
+        
+        .scratch-hidden {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: white;
+            color: #ff006e;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            z-index: 1;
+        }
+        
+        /* Typewriter */
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid white;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+            max-width: 100%;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: white; }
         }
         
         /* Scrollbar */
@@ -188,14 +341,11 @@
             border-radius: 5px;
         }
         
-        /* Mobile Responsive */
+        /* Mobile */
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 3rem !important;
-            }
-            .hero-subtitle {
-                font-size: 1.5rem !important;
-            }
+            .hero-title { font-size: 2.5rem !important; }
+            .hero-subtitle { font-size: 1.8rem !important; }
+            .popup { width: 95%; }
         }
     </style>
 </head>
@@ -203,227 +353,146 @@
 
     <!-- Background -->
     <div class="gradient-bg"></div>
-    <div id="hearts-container"></div>
+    <div id="floaters-container"></div>
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 px-6 py-4 glass-card">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <div class="font-handwriting text-2xl text-white/90">For Umi 💝</div>
-            <div class="text-sm font-light tracking-widest uppercase opacity-80">March 8, 2026</div>
+            <div class="font-handwriting text-2xl text-white/90 animate-pulse">For Umi 💝</div>
+            <div class="flex gap-4">
+                <button onclick="showPopup('secret')" class="text-sm bg-white/20 px-4 py-2 rounded-full hover:bg-white/30 transition">🔐 Secret</button>
+                <div class="text-sm font-light tracking-widest uppercase opacity-80 hidden md:block">March 8, 2026</div>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="min-h-screen flex items-center justify-center relative px-4 pt-20">
         <div class="text-center max-w-4xl mx-auto">
-            <div class="mb-8 slide-up">
-                <span class="font-handwriting text-3xl md:text-4xl text-white/80">To my closest lovely one</span>
+            <div class="mb-6 fade-in-up">
+                <span class="inline-block px-4 py-2 rounded-full bg-white/20 text-sm font-fun mb-4">✨ Special Delivery for Someone Amazing ✨</span>
+            </div>
+            
+            <div class="mb-8 fade-in-up delay-1">
+                <span class="font-handwriting text-3xl md:text-5xl text-white/90">To my closest lovely one</span>
             </div>
             
             <h1 class="font-display font-bold mb-6 leading-tight">
-                <div class="hero-title text-5xl md:text-7xl lg:text-8xl mb-2 slide-up delay-1">Happy</div>
-                <div class="hero-title text-5xl md:text-7xl lg:text-8xl mb-2 text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-pink-200 to-white slide-up delay-2">Women's Day</div>
-                <div class="hero-subtitle font-handwriting text-4xl md:text-6xl lg:text-7xl text-pink-200 slide-up delay-3">Umi</div>
+                <div class="hero-title text-5xl md:text-8xl lg:text-9xl mb-2 fade-in-up delay-2 text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-pink-200 to-white drop-shadow-lg">
+                    Happy
+                </div>
+                <div class="hero-title text-5xl md:text-8xl lg:text-9xl mb-2 fade-in-up delay-3 text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300">
+                    Women's Day
+                </div>
+                <div class="hero-subtitle font-handwriting text-5xl md:text-7xl lg:text-8xl text-pink-200 drop-shadow-lg fade-in-up delay-4 float">
+                    Umi! 🎉
+                </div>
             </h1>
             
-            <div class="mt-12 slide-up delay-4">
-                <button onclick="scrollToMessage()" class="magic-btn px-8 py-4 rounded-full text-lg font-semibold text-white shadow-lg cursor-pointer">
-                    Open Your Surprise ✨
+            <p class="text-xl md:text-2xl mt-6 mb-8 opacity-90 fade-in-up delay-4 font-light max-w-2xl mx-auto">
+                Prepare yourself for a journey of surprises, laughter, and lots of love! 
+                <span class="secret-reveal" onclick="revealSecret(this)">(Hover for a secret...)</span>
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center fade-in-up delay-5">
+                <button onclick="scrollToSection('message')" class="magic-btn px-8 py-4 rounded-full text-lg font-semibold text-white shadow-lg pulse-glow">
+                    Start the Adventure 🚀
+                </button>
+                <button onclick="showPopup('quiz')" class="px-6 py-4 rounded-full border-2 border-white/40 hover:bg-white/10 transition-all bg-white/5 backdrop-blur-sm">
+                    🎮 Play Mini Game
                 </button>
             </div>
         </div>
         
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer" onclick="scrollToSection('message')">
+            <svg class="w-8 h-8 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
             </svg>
         </div>
     </section>
 
+    <!-- Love Meter Section -->
+    <section class="min-h-screen flex items-center justify-center px-4 py-20">
+        <div class="max-w-2xl mx-auto w-full text-center">
+            <h2 class="font-display text-4xl md:text-6xl mb-4 fade-in-up">How Much Are You Loved? 💕</h2>
+            <p class="text-lg mb-12 opacity-80 fade-in-up delay-1">Click the button to measure the love!</p>
+            
+            <div class="glass-card rounded-3xl p-8 md:p-12 fade-in-up delay-2">
+                <div class="love-meter mb-6">
+                    <div class="love-fill" id="loveFill"></div>
+                </div>
+                <div class="text-3xl font-bold mb-6" id="loveText">0%</div>
+                <button onclick="fillLoveMeter()" class="magic-btn px-8 py-3 rounded-full text-lg font-semibold wiggle">
+                    Measure Love 💖
+                </button>
+                <p class="mt-4 text-sm opacity-70 hidden" id="loveMessage">Error: Love overflow! Cannot measure infinity! ♾️</p>
+            </div>
+            
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 fade-in-up delay-3">
+                <div class="glass-card p-4 rounded-2xl hover-lift cursor-pointer" onclick="createHeartBurst(this)">
+                    <div class="text-3xl mb-2">😍</div>
+                    <div class="text-sm">Adorable</div>
+                </div>
+                <div class="glass-card p-4 rounded-2xl hover-lift cursor-pointer" onclick="createHeartBurst(this)">
+                    <div class="text-3xl mb-2">🤩</div>
+                    <div class="text-sm">Stunning</div>
+                </div>
+                <div class="glass-card p-4 rounded-2xl hover-lift cursor-pointer" onclick="createHeartBurst(this)">
+                    <div class="text-3xl mb-2">🥰</div>
+                    <div class="text-sm">Lovable</div>
+                </div>
+                <div class="glass-card p-4 rounded-2xl hover-lift cursor-pointer" onclick="createHeartBurst(this)">
+                    <div class="text-3xl mb-2">✨</div>
+                    <div class="text-sm">Magical</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Message Section -->
     <section id="message" class="min-h-screen flex items-center justify-center px-4 py-20">
-        <div class="max-w-3xl mx-auto glass-card rounded-3xl p-8 md:p-12 hover-lift">
-            <div class="text-center mb-8">
-                <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-pink-300 to-purple-400 flex items-center justify-center text-4xl animate-pulse">
+        <div class="max-w-3xl mx-auto glass-card rounded-3xl p-8 md:p-12 hover-lift relative overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-pink-500 rounded-full blur-3xl opacity-30"></div>
+            <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-purple-500 rounded-full blur-3xl opacity-30"></div>
+            
+            <div class="text-center mb-8 relative z-10">
+                <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-pink-300 to-purple-400 flex items-center justify-center text-5xl animate-bounce">
                     💌
                 </div>
-                <h2 class="font-display text-3xl md:text-5xl mb-6">A Letter for You</h2>
+                <h2 class="font-display text-4xl md:text-5xl mb-2">A Letter for You</h2>
+                <p class="text-pink-200 font-handwriting text-xl">From my heart to yours</p>
             </div>
             
-            <div class="space-y-6 text-lg md:text-xl leading-relaxed font-light text-center md:text-left">
-                <p class="fade-in">My dearest Umi,</p>
+            <div class="space-y-6 text-lg md:text-xl leading-relaxed font-light relative z-10">
+                <p class="fade-in-up"><span class="text-3xl">My</span> dearest, most wonderful Umi,</p>
                 
-                <p class="fade-in delay-1">On this special day, I want to celebrate not just the amazing woman you are, but the incredible light you bring into my life every single day.</p>
-                
-                <p class="fade-in delay-2">Your strength inspires me, your kindness moves me, and your presence makes everything brighter. You are the definition of grace, beauty, and resilience wrapped in one.</p>
-                
-                <p class="fade-in delay-3">Thank you for being my closest companion, my confidant, and my greatest supporter. The world is better because you're in it, and I'm infinitely lucky to know you.</p>
-                
-                <p class="font-handwriting text-2xl text-pink-200 mt-8 fade-in delay-4">
-                    Forever grateful for you,<br>
-                    <span class="text-3xl">Your Admirer</span>
-                </p>
-            </div>
-            
-            <div class="mt-12 text-center">
-                <button onclick="createConfetti()" class="px-6 py-3 border-2 border-white/30 rounded-full hover:bg-white/10 transition-all duration-300 cursor-pointer">
-                    Click for Magic 🎉
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Qualities Section -->
-    <section class="min-h-screen flex items-center justify-center px-4 py-20">
-        <div class="max-w-6xl mx-auto w-full">
-            <h2 class="font-display text-3xl md:text-5xl text-center mb-16 fade-in">
-                What Makes You <span class="font-handwriting text-4xl md:text-6xl text-yellow-200">Extraordinary</span>
-            </h2>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="glass-card rounded-2xl p-8 hover-lift fade-in delay-1">
-                    <div class="text-5xl mb-4 text-center">🌟</div>
-                    <h3 class="font-display text-2xl mb-3 text-center">Radiant Spirit</h3>
-                    <p class="text-white/80 leading-relaxed text-center">Your energy illuminates every room you enter. You have this magical way of making everyone feel seen and valued.</p>
-                </div>
-                
-                <!-- Card 2 -->
-                <div class="glass-card rounded-2xl p-8 hover-lift fade-in delay-2">
-                    <div class="text-5xl mb-4 text-center">💪</div>
-                    <h3 class="font-display text-2xl mb-3 text-center">Unbreakable Strength</h3>
-                    <p class="text-white/80 leading-relaxed text-center">You face challenges with grace and emerge stronger every time. Your resilience is truly admirable.</p>
-                </div>
-                
-                <!-- Card 3 -->
-                <div class="glass-card rounded-2xl p-8 hover-lift fade-in delay-3">
-                    <div class="text-5xl mb-4 text-center">💖</div>
-                    <h3 class="font-display text-2xl mb-3 text-center">Boundless Heart</h3>
-                    <p class="text-white/80 leading-relaxed text-center">Your compassion knows no limits. You give love so freely and make the world a softer place.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Flower Section -->
-    <section class="min-h-screen flex items-center justify-center px-4 py-20">
-        <div class="text-center">
-            <h2 class="font-display text-3xl md:text-5xl mb-4 fade-in">A Flower That Blooms for You</h2>
-            <p class="text-lg mb-12 opacity-80 fade-in delay-1">Hover over the flower to see it dance ✨</p>
-            
-            <div class="flower-container relative w-64 h-64 mx-auto fade-in delay-2" id="flower">
-                <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-2xl">
-                    <path d="M100 200 Q100 150 100 100" stroke="#4ade80" stroke-width="4" fill="none"/>
-                    <ellipse cx="85" cy="160" rx="15" ry="8" fill="#22c55e" transform="rotate(-30 85 160)"/>
-                    <ellipse cx="115" cy="140" rx="15" ry="8" fill="#22c55e" transform="rotate(30 115 140)"/>
-                    
-                    <g class="petal"><ellipse cx="100" cy="60" rx="20" ry="40" fill="#f472b6" transform="rotate(0 100 100)"/></g>
-                    <g class="petal"><ellipse cx="100" cy="60" rx="20" ry="40" fill="#ec4899" transform="rotate(45 100 100)"/></g>
-                    <g class="petal"><ellipse cx="100" cy="60" rx="20" ry="40" fill="#db2777" transform="rotate(90 100 100)"/></g>
-                    <g class="petal"><ellipse cx="100" cy="60" rx="20" ry="40" fill="#be185d" transform="rotate(135 100 100)"/></g>
-                    <g class="petal"><ellipse cx="100" cy="60" rx="20" ry="40" fill="#9d174d" transform="rotate(180 100 100)"/></g>
-                    <g class="petal"><ellipse cx="100" cy="60" rx="20" ry="40" fill="#831843" transform="rotate(225 100 100)"/></g>
-                    <g class="petal"><ellipse cx="100" cy="60" rx="20" ry="40" fill="#9d174d" transform="rotate(270 100 100)"/></g>
-                    <g class="petal"><ellipse cx="100" cy="60" rx="20" ry="40" fill="#be185d" transform="rotate(315 100 100)"/></g>
-                    
-                    <circle cx="100" cy="100" r="15" fill="#fbbf24"/>
-                    <circle cx="100" cy="100" r="10" fill="#f59e0b"/>
-                </svg>
-                
-                <div class="sparkle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
-                <div class="sparkle" style="top: 80%; right: 10%; animation-delay: 0.5s;"></div>
-                <div class="sparkle" style="top: 40%; right: 5%; animation-delay: 1s;"></div>
-                <div class="sparkle" style="bottom: 20%; left: 20%; animation-delay: 1.5s;"></div>
-            </div>
-            
-            <p class="font-handwriting text-2xl md:text-3xl text-pink-200 mt-12 fade-in delay-3">"Like this flower, you make everything more beautiful"</p>
-        </div>
-    </section>
-
-    <!-- Memory Wall -->
-    <section class="min-h-screen flex items-center justify-center px-4 py-20">
-        <div class="max-w-6xl mx-auto w-full">
-            <h2 class="font-display text-3xl md:text-5xl text-center mb-4 fade-in">Moments to Treasure</h2>
-            <p class="text-center text-white/70 mb-12 fade-in delay-1">Click the cards to interact!</p>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="glass-card rounded-2xl aspect-square flex items-center justify-center hover-lift fade-in delay-1 cursor-pointer" onclick="this.style.transform='rotate(5deg)'">
-                    <div class="text-center p-6">
-                        <div class="text-6xl mb-4">📸</div>
-                        <p class="font-handwriting text-2xl">That smile</p>
-                    </div>
-                </div>
-                
-                <div class="glass-card rounded-2xl aspect-square flex items-center justify-center hover-lift fade-in delay-2 cursor-pointer" onclick="createHeartBurst(this)">
-                    <div class="text-center p-6">
-                        <div class="text-6xl mb-4">🌸</div>
-                        <p class="font-handwriting text-2xl">Spring memories</p>
-                    </div>
-                </div>
-                
-                <div class="glass-card rounded-2xl aspect-square flex items-center justify-center hover-lift fade-in delay-3 cursor-pointer" onclick="this.style.transform='scale(1.1)'">
-                    <div class="text-center p-6">
-                        <div class="text-6xl mb-4">☕</div>
-                        <p class="font-handwriting text-2xl">Coffee dates</p>
-                    </div>
-                </div>
-                
-                <div class="glass-card rounded-2xl aspect-square flex items-center justify-center hover-lift fade-in delay-1 cursor-pointer" onclick="createConfetti()">
-                    <div class="text-center p-6">
-                        <div class="text-6xl mb-4">🎨</div>
-                        <p class="font-handwriting text-2xl">Creative soul</p>
-                    </div>
-                </div>
-                
-                <div class="glass-card rounded-2xl aspect-square flex items-center justify-center hover-lift fade-in delay-2 cursor-pointer" onclick="this.querySelector('.emoji').classList.toggle('animate-bounce')">
-                    <div class="text-center p-6">
-                        <div class="text-6xl mb-4 emoji">✨</div>
-                        <p class="font-handwriting text-2xl">Sparkling moments</p>
-                    </div>
-                </div>
-                
-                <div class="glass-card rounded-2xl aspect-square flex items-center justify-center hover-lift fade-in delay-3 cursor-pointer" onclick="createMassiveConfetti()">
-                    <div class="text-center p-6">
-                        <div class="text-6xl mb-4">🎭</div>
-                        <p class="font-handwriting text-2xl">Adventures</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final Section -->
-    <section class="min-h-screen flex items-center justify-center px-4 py-20">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="glass-card rounded-3xl p-12 md:p-16 relative overflow-hidden hover-lift">
-                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400"></div>
-                
-                <h2 class="font-display text-4xl md:text-6xl mb-8 fade-in">
-                    You Are <span class="font-handwriting text-5xl md:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-pink-300">Loved</span>
-                </h2>
-                
-                <p class="text-xl md:text-2xl leading-relaxed mb-12 font-light fade-in delay-1">
-                    Today we celebrate you, Umi. But know that you are cherished every day of the year. 
-                    Keep shining, keep being unapologetically you.
+                <p class="fade-in-up delay-1">
+                    As I sit here thinking of you, my heart fills with so much joy and gratitude. 
+                    You are not just special—you are <span class="font-bold text-pink-300">extraordinary</span> in every possible way.
                 </p>
                 
-                <div class="flex flex-col md:flex-row gap-4 justify-center items-center fade-in delay-2">
-                    <button onclick="createMassiveConfetti()" class="magic-btn px-8 py-4 rounded-full text-lg font-semibold shadow-lg cursor-pointer">
-                        Celebrate Together! 🎊
-                    </button>
-                    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="px-8 py-4 rounded-full border-2 border-white/30 hover:bg-white/10 transition-all duration-300 cursor-pointer">
-                        Back to Top ↑
-                    </button>
+                <p class="fade-in-up delay-2">
+                    Do you know what I admire most about you? It's the way you <span class="secret-reveal" onclick="revealSecret(this)">(click to reveal)</span> 
+                    make everyone around you feel like they matter. Your kindness isn't just an act; it's who you are at your core.
+                </p>
+                
+                <p class="fade-in-up delay-3">
+                    On this Women's Day, I want to celebrate not just the amazing woman you are today, 
+                    but the incredible journey that shaped you. Every challenge you've overcome, every smile you've shared, 
+                    every dream you've pursued—they all make you the magnificent person standing before me (well, in my thoughts at least!).
+                </p>
+                
+                <p class="fade-in-up delay-4">
+                    You are my <span class="text-yellow-300 font-semibold">sunshine</span> on cloudy days, 
+                    my <span class="text-pink-300 font-semibold">laughter</span> in quiet moments, 
+                    and my <span class="text-purple-300 font-semibold">inspiration</span> when I need it most.
+                </p>
+                
+                <div class="glass-card p-6 rounded-2xl my-8 fade-in-up delay-4 bg-gradient-to-r from-pink-500/20 to-purple-500/20">
+                    <p class="font-handwriting text-2xl text-center italic">
+                        "In a world full of temporary things, you are my forever favorite."
+                    </p>
                 </div>
                 
-                <div class="mt-12 pt-8 border-t border-white/10 fade-in delay-3">
-                    <p class="font-handwriting text-3xl text-pink-200">With all my love,</p>
-                    <p class="text-lg mt-2 opacity-80">Your closest lovely one</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-8 text-center text-white/50 text-sm">
-        <p>Made with 💝 for Umi | Happy International Women's Day 2026</p>
+                <p class="fade-in-up delay-5">
+                    So here's to you, Umi—may your day be filled with as much happiness as y
