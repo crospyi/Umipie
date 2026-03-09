@@ -440,4 +440,434 @@
 
     <section class="min-h-screen flex items-center justify-center px-4 py-20">
         <div class="max-w-6xl mx-auto w-full">
-            <h2 class="font-display text-3xl md:
+            <h2 class="font-display text-3xl md:text-5xl text-center mb-4 fade-in-up px-2">Your Superpowers 🦸‍♀️</h2>
+            <p class="text-center text-white/70 mb-12 md:mb-16 fade-in-up text-sm md:text-base">(Yes, you have many!)</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 px-2">
+                <div class="glass-card rounded-2xl p-6 md:p-8 hover-lift fade-in-up text-center"><div class="text-4xl md:text-6xl mb-3 md:mb-4">🌟</div><h3 class="font-display text-xl md:text-2xl mb-2 md:mb-3">Radiant Spirit</h3><p class="text-white/80 text-sm md:text-base leading-relaxed mb-2 md:mb-4">Your energy could power a city!</p><div class="text-xs md:text-sm text-pink-300 font-handwriting">"Sunshine in human form"</div></div>
+                <div class="glass-card rounded-2xl p-6 md:p-8 hover-lift fade-in-up text-center"><div class="text-4xl md:text-6xl mb-3 md:mb-4">💪</div><h3 class="font-display text-xl md:text-2xl mb-2 md:mb-3">Warrior Strength</h3><p class="text-white/80 text-sm md:text-base leading-relaxed mb-2 md:mb-4">You've faced storms and thrive!</p><div class="text-xs md:text-sm text-yellow-300 font-handwriting">"Unbreakable"</div></div>
+                <div class="glass-card rounded-2xl p-6 md:p-8 hover-lift fade-in-up text-center"><div class="text-4xl md:text-6xl mb-3 md:mb-4">💖</div><h3 class="font-display text-xl md:text-2xl mb-2 md:mb-3">Infinite Heart</h3><p class="text-white/80 text-sm md:text-base leading-relaxed mb-2 md:mb-4">Your compassion has no limits.</p><div class="text-xs md:text-sm text-purple-300 font-handwriting">"Love personified"</div></div>
+                <div class="glass-card rounded-2xl p-6 md:p-8 hover-lift fade-in-up text-center"><div class="text-4xl md:text-6xl mb-3 md:mb-4">🧠</div><h3 class="font-display text-xl md:text-2xl mb-2 md:mb-3">Brilliant Mind</h3><p class="text-white/80 text-sm md:text-base leading-relaxed mb-2 md:mb-4">Wisdom + Wit = You!</p><div class="text-xs md:text-sm text-blue-300 font-handwriting">"Beauty with brains"</div></div>
+                <div class="glass-card rounded-2xl p-6 md:p-8 hover-lift fade-in-up text-center"><div class="text-4xl md:text-6xl mb-3 md:mb-4">🎨</div><h3 class="font-display text-xl md:text-2xl mb-2 md:mb-3">Creative Soul</h3><p class="text-white/80 text-sm md:text-base leading-relaxed mb-2 md:mb-4">You see the world in colors.</p><div class="text-xs md:text-sm text-green-300 font-handwriting">"Artist of life"</div></div>
+                <div class="glass-card rounded-2xl p-6 md:p-8 hover-lift fade-in-up text-center"><div class="text-4xl md:text-6xl mb-3 md:mb-4">😂</div><h3 class="font-display text-xl md:text-2xl mb-2 md:mb-3">Joy Bringer</h3><p class="text-white/80 text-sm md:text-base leading-relaxed mb-2 md:mb-4">Your laugh is contagious!</p><div class="text-xs md:text-sm text-orange-300 font-handwriting">"Laughter is your superpower"</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="min-h-screen flex items-center justify-center px-4 py-20">
+        <div class="text-center max-w-3xl">
+            <h2 class="font-display text-3xl md:text-5xl mb-4 fade-in-up px-2">A Garden Just for You 🌸</h2>
+            <p class="text-base md:text-lg mb-8 md:mb-12 opacity-80 fade-in-up">Click the flowers for surprises!</p>
+            <div class="flex justify-center gap-4 md:gap-8 flex-wrap fade-in-up px-2" id="flowerGarden"></div>
+            <p class="font-handwriting text-xl md:text-3xl text-pink-200 mt-8 md:mt-12 fade-in-up px-4">"Like these flowers, you make the world more beautiful"</p>
+        </div>
+    </section>
+
+    <section class="min-h-screen flex items-center justify-center px-4 py-20">
+        <div class="max-w-2xl mx-auto text-center w-full">
+            <h2 class="font-display text-3xl md:text-5xl mb-4 fade-in-up px-2">Scratch to Reveal! 🎫</h2>
+            <p class="text-base md:text-lg mb-6 md:mb-8 opacity-80 fade-in-up">Your special surprise awaits...</p>
+            <div class="fade-in-up flex justify-center px-2">
+                <div class="scratch-container" id="scratchContainer">
+                    <div class="scratch-hidden"><div class="text-3xl md:text-4xl mb-2">🎉</div><div class="text-lg md:text-xl">YOU WIN!</div><div class="text-sm md:text-base text-pink-600 mt-1">Unlimited Hugs!</div></div>
+                    <canvas class="scratch-canvas" id="scratchCanvas" width="320" height="180"></canvas>
+                </div>
+            </div>
+            <p class="mt-4 md:mt-6 text-xs md:text-sm opacity-60 fade-in-up px-4">Click and drag to scratch!</p>
+            <button onclick="resetScratch()" class="mt-4 px-4 py-2 text-xs md:text-sm border border-white/30 rounded-full hover:bg-white/10 transition">Reset Card 🔄</button>
+        </div>
+    </section>
+
+    <section class="min-h-screen flex items-center justify-center px-4 py-20">
+        <div class="max-w-6xl mx-auto w-full">
+            <h2 class="font-display text-3xl md:text-5xl text-center mb-4 fade-in-up px-2">Our Memory Lane 📸</h2>
+            <p class="text-center text-white/70 mb-8 md:mb-12 fade-in-up text-sm md:text-base">Click to reveal memories!</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 px-2">
+                <div class="glass-card rounded-2xl aspect-square flex items-center justify-center hover-lift fade-in-up cursor-pointer" onclick="memoryClick(this, 'That smile that melts hearts')"><div class="text-center p-4 md:p-6"><div class="text-4xl md:text-6xl mb-2 md:mb-4">📸</div><p class="font-handwriting text-lg md:text-2xl">That Smile</p></div></div>
+                <div class="glass-card rounded-2xl aspect-square flex items-center justify-center hover-lift fade-in-up cursor-pointer" onclick="memoryClick(this, 'Adventures we shared')"><div class="text-center p-4 md:p-6"><div class="text-4xl md:text-6xl mb-2 md:mb-4">🌸</div><p class="font-handwriting text-lg md:text-2xl">Spring Memories</p></div></div>
+                <div class="glass-card rounded-2xl aspect-square flex items-center justify-center hover-lift fade-in-up cursor-pointer" onclick="memoryClick(this, 'Coffee and conversations')"><div class="text-center p-4 md:p-6"><div class="text-4xl md:text-6xl mb-2 md:mb-4">☕</div><p class="font-handwriting text-lg md:text-2xl">Coffee Dates</p></div></div>
+                <div class="glass-card rounded-2xl aspect-square flex items-center justify-center hover-lift fade-in-up cursor-pointer" onclick="memoryClick(this, 'Your creative genius')"><div class="text-center p-4 md:p-6"><div class="text-4xl md:text-6xl mb-2 md:mb-4">🎨</div><p class="font-handwriting text-lg md:text-2xl">Creative Soul</p></div></div>
+                <div class="glass-card rounded-2xl aspect-square flex items-center justify-center hover-lift fade-in-up cursor-pointer" onclick="memoryClick(this, 'Sparkling moments')"><div class="text-center p-4 md:p-6"><div class="text-4xl md:text-6xl mb-2 md:mb-4">✨</div><p class="font-handwriting text-lg md:text-2xl">Magic Moments</p></div></div>
+                <div class="glass-card rounded-2xl aspect-square flex items-center justify-center hover-lift fade-in-up cursor-pointer" onclick="memoryClick(this, 'More adventures await!')"><div class="text-center p-4 md:p-6"><div class="text-4xl md:text-6xl mb-2 md:mb-4">🎭</div><p class="font-handwriting text-lg md:text-2xl">More to Come</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="min-h-screen flex items-center justify-center px-4 py-20">
+        <div class="max-w-4xl mx-auto text-center w-full">
+            <div class="glass-card rounded-3xl p-6 md:p-16 relative overflow-hidden hover-lift mx-2">
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400"></div>
+                <div class="absolute -top-20 -right-20 w-40 h-40 bg-pink-500 rounded-full blur-3xl opacity-20"></div>
+                <div class="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500 rounded-full blur-3xl opacity-20"></div>
+                <div class="text-5xl md:text-6xl mb-4 md:mb-6 animate-bounce">🎉</div>
+                <h2 class="font-display text-3xl md:text-6xl mb-4 md:mb-6 fade-in-up px-2">You Are <span class="font-handwriting text-4xl md:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-pink-400 to-purple-400">Everything</span></h2>
+                <p class="text-base md:text-2xl leading-relaxed mb-6 md:mb-8 font-light fade-in-up px-4">Today we celebrate you, but honestly? You deserve to be celebrated every single day.</p>
+                <div class="glass-card p-4 md:p-6 rounded-2xl mb-6 md:mb-8 bg-white/5 fade-in-up mx-2">
+                    <p class="font-handwriting text-xl md:text-3xl text-pink-200">"You're not just my favorite person...<br>you're my favorite everything."</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center fade-in-up px-2">
+                    <button onclick="createMassiveConfetti(); showPopup('final')" class="magic-btn px-6 py-3 md:px-8 md:py-4 rounded-full text-base md:text-lg font-semibold shadow-lg pulse-glow w-full sm:w-auto">Final Surprise! 🎁</button>
+                    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="px-6 py-3 md:px-8 md:py-4 rounded-full border-2 border-white/30 hover:bg-white/10 transition-all w-full sm:w-auto text-sm md:text-base">Experience Again ↑</button>
+                </div>
+                <div class="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-white/10 fade-in-up px-2">
+                    <p class="font-handwriting text-2xl md:text-3xl text-pink-200 mb-2">Forever and always,</p>
+                    <p class="text-sm md:text-lg opacity-80">Your biggest fan, your closest friend, your forever admirer 💝</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-6 md:py-8 text-center text-white/50 text-xs md:text-sm px-4">
+        <p>Made with infinite 💝 for Umi | Happy International Women's Day 2026</p>
+        <p class="mt-2 text-xs">P.S. You're amazing, never forget that!</p>
+    </footer>
+
+    <div class="popup-overlay" id="popupOverlay" onclick="closeAllPopups()"></div>
+    
+    <div class="popup glass-card rounded-3xl p-6 md:p-8" id="secretPopup">
+        <button onclick="closeAllPopups()" class="absolute top-4 right-4 text-2xl hover:rotate-90 transition-transform">&times;</button>
+        <div class="text-center">
+            <div class="text-4xl md:text-5xl mb-4">🔐</div>
+            <h3 class="font-display text-xl md:text-2xl mb-4">Shh... Secret Message!</h3>
+            <p class="text-sm md:text-lg mb-4 md:mb-6">You are the reason someone smiles today. Actually, you're the reason I smile every day! 😊</p>
+            <button onclick="closeAllPopups()" class="magic-btn px-4 py-2 md:px-6 md:py-2 rounded-full text-sm md:text-base">Aww, close this 💕</button>
+        </div>
+    </div>
+    
+    <div class="popup glass-card rounded-3xl p-6 md:p-8" id="quizPopup">
+        <button onclick="closeAllPopups()" class="absolute top-4 right-4 text-2xl hover:rotate-90 transition-transform">&times;</button>
+        <div class="text-center">
+            <div class="text-3xl md:text-4xl mb-4">🎮</div>
+            <h3 class="font-display text-xl md:text-2xl mb-4">The Umi Awesome Quiz!</h3>
+            <div id="quizContent">
+                <p class="text-sm md:text-lg mb-4 md:mb-6">What makes Umi absolutely incredible?</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <button onclick="quizAnswer(true)" class="quiz-btn text-sm md:text-base">Everything!</button>
+                    <button onclick="quizAnswer(false)" class="quiz-btn text-sm md:text-base">Just some things</button>
+                    <button onclick="quizAnswer(false)" class="quiz-btn text-sm md:text-base">Nothing much</button>
+                    <button onclick="quizAnswer(true)" class="quiz-btn text-sm md:text-base">Her existence!</button>
+                </div>
+            </div>
+            <div id="quizResult" class="hidden">
+                <div class="text-4xl md:text-6xl mb-4">🎉</div>
+                <p class="text-lg md:text-xl mb-4">Correct! You're AMAZING!</p>
+                <button onclick="closeAllPopups(); createConfetti()" class="magic-btn px-4 py-2 md:px-6 md:py-2 rounded-full text-sm md:text-base">Claim Prize!</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="popup glass-card rounded-3xl p-6 md:p-8" id="complimentPopup">
+        <button onclick="closeAllPopups()" class="absolute top-4 right-4 text-2xl hover:rotate-90 transition-transform">&times;</button>
+        <div class="text-center">
+            <div class="text-4xl md:text-5xl mb-4" id="complimentEmoji">✨</div>
+            <h3 class="font-display text-xl md:text-2xl mb-4">Daily Dose of Truth</h3>
+            <p class="text-lg md:text-2xl font-handwriting text-pink-200 mb-4 md:mb-6" id="complimentText">You're more fun than bubble wrap!</p>
+            <button onclick="newCompliment()" class="px-3 py-2 md:px-4 border border-white/30 rounded-full hover:bg-white/10 mr-2 text-sm md:text-base">Another! 🔄</button>
+            <button onclick="closeAllPopups()" class="magic-btn px-4 py-2 md:px-6 md:py-2 rounded-full text-sm md:text-base">Thanks! 💕</button>
+        </div>
+    </div>
+    
+    <div class="popup glass-card rounded-3xl p-6 md:p-8" id="finalPopup">
+        <button onclick="closeAllPopups()" class="absolute top-4 right-4 text-2xl hover:rotate-90 transition-transform">&times;</button>
+        <div class="text-center">
+            <div class="text-5xl md:text-6xl mb-4 animate-bounce">🎁</div>
+            <h3 class="font-display text-2xl md:text-3xl mb-4">One Last Thing...</h3>
+            <p class="text-sm md:text-lg mb-4 md:mb-6">I could have given you flowers, chocolates, or gifts...<br><br>But I decided to give you something that lasts forever:<br><span class="font-handwriting text-xl md:text-2xl text-pink-300">My endless appreciation and love! 💝</span></p>
+            <div class="text-xs md:text-sm opacity-70 mb-4 md:mb-6">(But seriously, if you want real flowers, just say the word! 🌹)</div>
+            <button onclick="closeAllPopups(); createMassiveConfetti()" class="magic-btn px-6 py-2 md:px-8 md:py-3 rounded-full text-base md:text-lg">Best. Day. Ever! 🎉</button>
+        </div>
+    </div>
+
+    <script>
+        let loveMeterFilled = false;
+        let scratchInitialized = false;
+        let isScratching = false;
+        
+        const loveThings = [
+            { emoji: '😊', text: 'Your smile that lights up the darkest days' },
+            { emoji: '🤗', text: 'Your hugs that feel like home' },
+            { emoji: '😂', text: 'Your laugh that\'s contagious' },
+            { emoji: '🧠', text: 'Your brilliant mind and wise words' },
+            { emoji: '💪', text: 'Your strength that inspires me' },
+            { emoji: '💖', text: 'Your heart that\'s pure gold' },
+            { emoji: '🎨', text: 'Your creativity that colors the world' },
+            { emoji: '🌟', text: 'Your uniqueness that makes you YOU' },
+            { emoji: '🤝', text: 'Your loyalty as a friend' },
+            { emoji: '✨', text: 'Your existence makes life better' }
+        ];
+        
+        const compliments = [
+            { text: "You're more fun than bubble wrap!", emoji: "✨" },
+            { text: "Your smile is my favorite notification!", emoji: "📱" },
+            { text: "You're the human equivalent of a warm hug!", emoji: "🤗" },
+            { text: "If awesome had a face, it would be yours!", emoji: "😎" },
+            { text: "You're sweeter than a candy store!", emoji: "🍬" },
+            { text: "Your vibe attracts your tribe!", emoji: "🌟" },
+            { text: "You're the reason 'amazing' was invented!", emoji: "💎" },
+            { text: "You're a limited edition!", emoji: "🏆" }
+        ];
+        
+        function createFloaters() {
+            const container = document.getElementById('floaters-container');
+            const emojis = ['💖', '✨', '🌸', '💕', '🎉', '💝', '🌟', '💗', '🦋', '💫'];
+            setInterval(() => {
+                if (document.hidden) return;
+                const el = document.createElement('div');
+                el.className = 'floater';
+                el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                el.style.left = Math.random() * 100 + '%';
+                el.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                el.style.animationDuration = (Math.random() * 5 + 8) + 's';
+                container.appendChild(el);
+                setTimeout(() => el.remove(), 13000);
+            }, 1200);
+        }
+        
+        function createConfetti() {
+            const colors = ['#ff006e', '#8338ec', '#3a86ff', '#06ffa5', '#ffbe0b', '#fb5607'];
+            const count = window.innerWidth < 768 ? 30 : 60;
+            for (let i = 0; i < count; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                document.body.appendChild(confetti);
+                setTimeout(() => confetti.remove(), 4000);
+            }
+        }
+        
+        function createMassiveConfetti() {
+            for (let i = 0; i < 5; i++) setTimeout(createConfetti, i * 200);
+        }
+        
+        function createHeartBurst(element) {
+            const rect = element.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const hearts = ['💖', '💕', '💗', '💝', '💓'];
+            for (let i = 0; i < 12; i++) {
+                const heart = document.createElement('div');
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.position = 'fixed';
+                heart.style.left = centerX + 'px';
+                heart.style.top = centerY + 'px';
+                heart.style.fontSize = (Math.random() * 10 + 20) + 'px';
+                heart.style.pointerEvents = 'none';
+                heart.style.zIndex = '9999';
+                heart.style.transition = 'all 1s ease-out';
+                document.body.appendChild(heart);
+                const angle = (Math.PI * 2 * i) / 12;
+                const velocity = 80 + Math.random() * 80;
+                setTimeout(() => {
+                    heart.style.transform = `translate(${Math.cos(angle) * velocity}px, ${Math.sin(angle) * velocity}px) scale(0)`;
+                    heart.style.opacity = '0';
+                }, 10);
+                setTimeout(() => heart.remove(), 1000);
+            }
+        }
+        
+        function fillLoveMeter() {
+            if (loveMeterFilled) {
+                loveMeterFilled = false;
+                document.getElementById('loveFill').style.width = '0%';
+                document.getElementById('loveText').textContent = '0%';
+                document.getElementById('loveText').style.fontSize = '';
+                document.getElementById('loveMessage').style.opacity = '0';
+                document.getElementById('loveBtn').textContent = 'Measure Love 💖';
+                return;
+            }
+            loveMeterFilled = true;
+            const btn = document.getElementById('loveBtn');
+            btn.textContent = 'Measuring...';
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 2;
+                document.getElementById('loveFill').style.width = progress + '%';
+                document.getElementById('loveText').textContent = progress + '%';
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    document.getElementById('loveText').textContent = '∞%';
+                    document.getElementById('loveText').style.fontSize = '2.5rem';
+                    document.getElementById('loveMessage').style.opacity = '1';
+                    btn.textContent = 'Reset 💫';
+                    createConfetti();
+                }
+            }, 25);
+        }
+        
+        function createLoveCards() {
+            const container = document.getElementById('loveCards');
+            loveThings.forEach((thing, index) => {
+                const card = document.createElement('div');
+                card.className = 'love-card glass-card rounded-2xl fade-in-up';
+                card.style.animationDelay = (index * 0.1) + 's';
+                card.innerHTML = `
+                    <div class="card-front"><div class="text-3xl md:text-4xl mb-2">❓</div><div class="text-xs md:text-sm opacity-70">Click</div></div>
+                    <div class="card-back"><div class="text-2xl md:text-3xl mb-2">${thing.emoji}</div><p class="text-xs md:text-sm font-semibold text-center">${thing.text}</p></div>
+                `;
+                card.onclick = () => revealCard(card);
+                container.appendChild(card);
+            });
+        }
+        
+        function revealCard(card) {
+            if (card.classList.contains('revealed')) return;
+            card.classList.add('revealed');
+            createHeartBurst(card);
+        }
+        
+        function revealAllCards() {
+            document.querySelectorAll('.love-card').forEach((card, index) => {
+                setTimeout(() => { if (!card.classList.contains('revealed')) revealCard(card); }, index * 150);
+            });
+        }
+        
+        function createFlowerGarden() {
+            const container = document.getElementById('flowerGarden');
+            const flowers = ['🌸', '🌺', '🌻', '🌷', '🌹', '💐', '🌼', '🌿'];
+            flowers.forEach((flower, index) => {
+                const div = document.createElement('div');
+                div.className = 'text-4xl md:text-6xl cursor-pointer transition-all duration-300 hover:scale-125';
+                div.textContent = flower;
+                div.style.animation = `float ${3 + Math.random()}s ease-in-out infinite`;
+                div.style.animationDelay = (index * 0.2) + 's';
+                div.onclick = function() {
+                    createHeartBurst(this);
+                    this.style.transform = 'scale(1.5) rotate(360deg)';
+                    setTimeout(() => this.style.transform = '', 600);
+                };
+                container.appendChild(div);
+            });
+        }
+        
+        function initScratchCard() {
+            if (scratchInitialized) return;
+            scratchInitialized = true;
+            const canvas = document.getElementById('scratchCanvas');
+            const ctx = canvas.getContext('2d');
+            const container = document.getElementById('scratchContainer');
+            const rect = container.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
+            
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 20px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('✨ Scratch Here! ✨', canvas.width / 2, canvas.height / 2);
+            
+            function scratch(e) {
+                if (!isScratching) return;
+                e.preventDefault();
+                const rect = canvas.getBoundingClientRect();
+                const x = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left;
+                const y = (e.clientY || (e.touches && e.touches[0].clientY)) - rect.top;
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.beginPath();
+                ctx.arc(x, y, 25, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            
+            canvas.addEventListener('mousedown', () => isScratching = true);
+            canvas.addEventListener('mouseup', () => isScratching = false);
+            canvas.addEventListener('mouseleave', () => isScratching = false);
+            canvas.addEventListener('mousemove', scratch);
+            canvas.addEventListener('touchstart', (e) => { isScratching = true; scratch(e); });
+            canvas.addEventListener('touchend', () => isScratching = false);
+            canvas.addEventListener('touchmove', scratch);
+        }
+        
+        function resetScratch() {
+            scratchInitialized = false;
+            initScratchCard();
+        }
+        
+        function showPopup(type) {
+            document.getElementById('popupOverlay').classList.add('active');
+            if (type === 'secret') document.getElementById('secretPopup').classList.add('active');
+            if (type === 'quiz') {
+                document.getElementById('quizPopup').classList.add('active');
+                document.getElementById('quizContent').classList.remove('hidden');
+                document.getElementById('quizResult').classList.add('hidden');
+            }
+            if (type === 'compliment') {
+                document.getElementById('complimentPopup').classList.add('active');
+                newCompliment();
+            }
+            if (type === 'final') document.getElementById('finalPopup').classList.add('active');
+        }
+        
+        function closeAllPopups() {
+            document.querySelectorAll('.popup').forEach(p => p.classList.remove('active'));
+            document.getElementById('popupOverlay').classList.remove('active');
+        }
+        
+        function quizAnswer(isCorrect) {
+            document.getElementById('quizContent').classList.add('hidden');
+            document.getElementById('quizResult').classList.remove('hidden');
+        }
+        
+        function newCompliment() {
+            const comp = compliments[Math.floor(Math.random() * compliments.length)];
+            document.getElementById('complimentText').textContent = comp.text;
+            document.getElementById('complimentEmoji').textContent = comp.emoji;
+        }
+        
+        function memoryClick(el, text) {
+            createHeartBurst(el);
+            const title = el.querySelector('.font-handwriting');
+            const original = title.textContent;
+            title.textContent = text;
+            title.classList.add('text-pink-300');
+            setTimeout(() => {
+                title.textContent = original;
+                title.classList.remove('text-pink-300');
+            }, 2500);
+        }
+        
+        function revealSecret(el) {
+            el.textContent = "make everyone feel like they matter";
+            el.classList.add('revealed');
+            createConfetti();
+        }
+        
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) element.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            createFloaters();
+            createLoveCards();
+            createFlowerGarden();
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            
+            document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+            
+            const scratchObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting && !scratchInitialized) setTimeout(initScratchCard, 500); });
+            }, { threshold: 0.5 });
+            
+            const scratchSection = document.getElementById('scratchContainer');
+            if (scratchSection) scratchObserver.observe(scratchSection);
+        });
+        
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeAllPopups(); });
+        
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => { if (scratchInitialized) resetScratch(); }, 250);
+        });
+    </script>
+</body>
+</html>
